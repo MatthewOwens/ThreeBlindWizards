@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,207 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="tech.mowens.threeblindwizards.MainActivity">
+    tools:context="tech.mowens.threeblindwizards.MainActivity"
+    android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".2">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/hDecreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_rew"
+                android:cropToPadding="false"
+                android:clickable="true"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="0"
+                android:id="@+id/hTextView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/health_icon" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/hIncreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_ff"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate Character"
+            android:id="@+id/genCharaButton"
+            android:layout_weight=".025" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/charaImageView"
+            android:layout_weight=".4" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Character Name"
+            android:id="@+id/charaTextView"
+            android:layout_weight=".025"
+            android:gravity="center"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight=".75">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/wDecreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_rew"
+                android:cropToPadding="false"
+                android:clickable="true"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="0"
+                android:id="@+id/wTextView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/wave_icon" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/wIncreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_ff"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".75">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/gDecreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_rew"
+                android:cropToPadding="false"
+                android:clickable="true"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="0"
+                android:id="@+id/gTextView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/growth_icon"
+                android:layout_gravity="center_vertical" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/gIncreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_ff"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".75">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bDecreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_rew"
+                android:cropToPadding="false"
+                android:clickable="true"
+                android:layout_gravity="center_vertical" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:text="0"
+                android:id="@+id/bTextView"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/blaze_icon"
+                android:layout_gravity="center_vertical" />
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/bIncreaseButton"
+                android:layout_weight="1"
+                android:background="@android:drawable/ic_media_ff"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:text="Ability"
+            android:id="@+id/textView"
+            android:layout_weight=".25"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Ability Text~"
+            android:id="@+id/abilityTextView"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:background="#ffe0b2"
+            android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Noise Maker"
+            android:id="@+id/noiseButton"
+            android:layout_weight=".5" />
+    </LinearLayout>
+</LinearLayout>
