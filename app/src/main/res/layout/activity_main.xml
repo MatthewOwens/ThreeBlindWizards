@@ -80,6 +80,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="Noise Maker"
+            android:id="@+id/noiseButton"
+            android:layout_weight=".5" />
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -203,11 +210,5 @@
             android:background="#ffe0b2"
             android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:text="Noise Maker"
-            android:id="@+id/noiseButton"
-            android:layout_weight=".5" />
     </LinearLayout>
 </LinearLayout>
