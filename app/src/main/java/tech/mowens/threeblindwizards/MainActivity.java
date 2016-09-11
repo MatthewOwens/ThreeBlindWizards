@@ -1,5 +1,6 @@
 package tech.mowens.threeblindwizards;
 
+import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -147,19 +148,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         name.setText(nameArr.get(rand.nextInt(nameArr.size())));
         ability.setText(abilityArr.get(rand.nextInt(abilityArr.size())));
+
+        // Setting the wizard image
+        int wizNum = rand.nextInt(8) + 1;
+        String drawName = "wiz" + Integer.toString(wizNum);
+        wizNum = getResources().getIdentifier(drawName, "drawable", getPackageName());
+        sprite.setImageResource(wizNum);
     }
 
     private void populateStrings()
     {
-        nameArr.add("name0");
-        nameArr.add("name1");
-        nameArr.add("name2");
-        nameArr.add("name3");
+        nameArr.add("Falkor");
+        nameArr.add("Azagoth");
+        nameArr.add("Nividya");
+        nameArr.add("Auriel");
+        nameArr.add("Harion");
+        nameArr.add("Ulstiof");
+        nameArr.add("Yellama");
+        nameArr.add("Sarria");
+        nameArr.add("Perkara");
+        nameArr.add("Sukamu");
+        nameArr.add("Erado");
+        nameArr.add("Renloky");
+        nameArr.add("Purkoi");
+        nameArr.add("Erivlad");
+        nameArr.add("Zeldari");
+        nameArr.add("Stargaat");
+        nameArr.add("Luciyef");
+        nameArr.add("Crabbles");
+        nameArr.add("The Bearded One");
+        nameArr.add("Pixel Wizard");
+        nameArr.add("Dog");
 
-        abilityArr.add("ability0");
-        abilityArr.add("ability1");
-        abilityArr.add("ability2");
-        abilityArr.add("ability3");
+        abilityArr.add("Tough Skin\n\nBegin with 7 extra health");
+        abilityArr.add("First to Betray\n\nYou take the first turn and your starting hand is 3");
+        abilityArr.add("Many Leather-Bound Books\n\nYou may begin the game with two extra cards of your choice in the deck, from the line-up");
+        abilityArr.add("Glass Cannon\n\nYour highest starting stat gains a bonus of +5, your lowest starting stat gains -5. You may choose if there's a tie");
+        abilityArr.add("Extra Lessions\n\nBegin with 3 extra points to distribute as you choose");
+        abilityArr.add("Spell Shield\n\nOnce, you may ignore all damage you take in a turn");
+        abilityArr.add("Magic Cocktail\n\nOnce, you may cast or discard any cards as if they were any type");
+        abilityArr.add("Agitator\n\nTwice, you may prevent a player from drawing a card at the end of their turn");
+        abilityArr.add("Bomb Shelter Spell\n\nBombs only deal 4 damage to all players. Must be announced upon the first bomb cast");
+        abilityArr.add("Channeling\n\nOnce, you may draw two additional cards at the end of the turn");
+        abilityArr.add("Bad Magic\n\nOnce, you may target a player and have them lose 3 points of a stat of your choice");
+        abilityArr.add("Yodeller\n\nOnce, you may chant twice in a turn");
+        abilityArr.add("Anarchist\n\nOnce, you may Bomb by discarding instead of casting");
+        abilityArr.add("Full Force\n\nOnce when you attack, you have a bonus +4 to the attack");
+        abilityArr.add("Final Form\n\nYour starting health is reduced by 4. When you are defeated, you survive with 1 Health and gain +5 to all stats");
     }
 
     private void modifyHealth(int mod)

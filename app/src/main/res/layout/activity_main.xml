@@ -37,9 +37,11 @@
                 android:layout_height="70dp"
                 android:text="0"
                 android:id="@+id/hTextView"
+                style="@style/AudioFileInfoOverlayText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@drawable/health_icon" />
+                android:background="@drawable/heart"
+                android:textSize="18dp" />
 
             <ImageButton
                 android:layout_width="0dp"
@@ -60,9 +62,13 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/charaImageView"
-            android:layout_weight=".4" />
+            android:layout_weight=".2"
+            android:src="@drawable/no_wiz"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            android:maxHeight="50dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -109,9 +115,11 @@
                 android:layout_height="70dp"
                 android:text="0"
                 android:id="@+id/wTextView"
+                style="@style/AudioFileInfoOverlayText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@drawable/wave_icon" />
+                android:background="@drawable/water"
+                android:textSize="18dp" />
 
             <ImageButton
                 android:layout_width="0dp"
@@ -143,10 +151,12 @@
                 android:layout_height="70dp"
                 android:text="0"
                 android:id="@+id/gTextView"
+                style="@style/AudioFileInfoOverlayText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@drawable/growth_icon"
-                android:layout_gravity="center_vertical" />
+                android:background="@drawable/grass"
+                android:layout_gravity="center_vertical"
+                android:textSize="18dp" />
 
             <ImageButton
                 android:layout_width="0dp"
@@ -178,10 +188,12 @@
                 android:layout_height="70dp"
                 android:text="0"
                 android:id="@+id/bTextView"
+                style="@style/AudioFileInfoOverlayText"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:background="@drawable/blaze_icon"
-                android:layout_gravity="center_vertical" />
+                android:background="@drawable/fire"
+                android:layout_gravity="center_vertical"
+                android:textSize="18dp" />
 
             <ImageButton
                 android:layout_width="0dp"
