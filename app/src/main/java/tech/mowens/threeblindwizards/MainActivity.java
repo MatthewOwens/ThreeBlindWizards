@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.Vector;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     public enum ButtonType {
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private final int startingHealth = 25;
 
+    private Vector<String> nameArr = new Vector<String>();
+    private Vector<String> abilityArr = new Vector<String>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+        populateStrings();
 
         // Initilizing the stats
         for(int i = 0; i < 4; ++i)
@@ -119,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void genCharacter()
     {
+        Random rand = new Random();
         Log.i("MAIN", "genCharacter");
         genStatValues();
 
@@ -126,6 +133,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             stats[i].textView.setText(Integer.toString(stats[i].val));
 
         modifyHealth(startingHealth - stats[StatTypes.HEALTH.index].val);
+
+        name.setText(nameArr.get(rand.nextInt(nameArr.size())));
+        ability.setText(abilityArr.get(rand.nextInt(abilityArr.size())));
+    }
+
+    private void populateStrings()
+    {
+        nameArr.add("name0");
+        nameArr.add("name1");
+        nameArr.add("name2");
+        nameArr.add("name3");
+
+        abilityArr.add("ability0");
+        abilityArr.add("ability1");
+        abilityArr.add("ability2");
+        abilityArr.add("ability3");
     }
 
     private void modifyHealth(int mod)

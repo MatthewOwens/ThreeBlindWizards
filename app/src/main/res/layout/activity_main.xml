@@ -208,7 +208,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:background="#ffe0b2"
-            android:textColor="@color/abc_background_cache_hint_selector_material_dark" />
+            android:textColor="#2d2d2d" />
 
     </LinearLayout>
 </LinearLayout>
