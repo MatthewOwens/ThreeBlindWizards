@@ -1,5 +1,7 @@
 package tech.mowens.threeblindwizards;
 
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Vector<String> nameArr = new Vector<String>();
     private Vector<String> abilityArr = new Vector<String>();
+    //private final MediaPlayer mp = MediaPlayer.create(getResources(), R.raw.beep);
+    private MediaPlayer mp = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         populateStrings();
+        mp = MediaPlayer.create(this, R.raw.beep);
 
         // Initilizing the stats
         for(int i = 0; i < 4; ++i)
@@ -121,6 +126,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             modifyHealth(-1);
         else if (v == stats[StatTypes.HEALTH.index].buttons[ButtonType.INCREMENT.index])
             modifyHealth(1);
+
+        for(int i = 0; i < 3; ++i)
+            stats[i].update(v);
+
+        mp.seekTo(0);
+        mp.start();
     }
 
     private void genCharacter()
@@ -210,8 +221,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private class Stat
     {
         public int val;
-        TextView textView;
-        ImageButton buttons[] = new ImageButton[2];
+        public TextView textView;
+        public ImageButton buttons[] = new ImageButton[2];
+
+        public void update(View v)
+        {
+            if(v == buttons[ButtonType.INCREMENT.index])
+                val++;
+            else if (v == buttons[ButtonType.DECREMENT.index])
+                val--;
+
+            textView.setText(Integer.toString(val));
+        }
     }
 }
 
